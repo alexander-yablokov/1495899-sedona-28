@@ -14,6 +14,17 @@
       background-repeat: no-repeat;
       color: white;
     }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
   </style>
 </head>
 
@@ -30,9 +41,9 @@
     <span><a href="index.html"><img src="img/sedona-logo.svg" alt="Логотип Седоны" width="138" height="70"></a></span>
   </header>
   <main>
-    <h1>Городок Седона. Предложения гостиниц, мотелей, апартаменов</h1>
+    <h1 class="visually-hidden">Городок Седона. Предложения гостиниц, мотелей, апартаменов</h1>
     <section>
-      <h2>Фильтр поиска</h2>
+      <h2 class="visually-hidden">Фильтр поиска</h2>
       <div class="form-filter">
         <form name="accomodation-search" method="get" action="https://echo.htmlacademy.ru/"
         oninput="max_cost.value = cost_per_day.value">
@@ -82,47 +93,50 @@
         <a href="#"><img src="img/sort-direction" alt="Направление сортировки"></a>
       </div>
     </section>
-    <article>
-      <h2>Amara Resort & Spa</h2>
-      <img src="img/amara.jpg" alt="Amara Resort & Spa" width="135" height="90">
-      <p>Гостиница</p>
-      <p>Звезды: 4</p>
-      <p>Рейтинг: 8,5</p>
-      <p>От 4000 Р.</p>
-      <a href="#">Подробнее</a>
-      <a href="#">Забронировать</a>
-    </article>
-    <article>
-      <h2>Desert Quail Inn</h2>
-      <img src="img/quail.jpg" alt="Desert Quail Inn" width="135" height="90">
-      <p>Мотель</p>
-      <p>Звезды: 3</p>
-      <p>Рейтинг: 8,9</p>
-      <p>От 3000 Р.</p>
-      <a href="#">Подробнее</a>
-      <a href="#">Забронировать</a>
-    </article>
-    <article>
-      <h2>Villas at Poco Diablo</h2>
-      <img src="img/villas.jpg" alt="Villas at Poco Diablo" width="135" height="90">
-      <p>Апартаменты</p>
-      <p>Звезды: 2</p>
-      <p>Рейтинг: 9,2</p>
-      <p>От 2000 Р.</p>
-      <a href="#">Подробнее</a>
-      <a href="#">Забронировать</a>
-    </article>
+    <section>
+      <h2 class="visually-hidden">Результаты поиска</h2>
+      <article>
+        <h2>Amara Resort & Spa</h2>
+        <img src="img/amara.jpg" alt="Amara Resort & Spa" width="135" height="90">
+        <p>Гостиница</p>
+        <p>Звезды: 4</p>
+        <p>Рейтинг: 8,5</p>
+        <p>От 4000 Р.</p>
+        <a href="#">Подробнее</a>
+        <a href="#">Забронировать</a>
+      </article>
+      <article>
+        <h2>Desert Quail Inn</h2>
+        <img src="img/quail.jpg" alt="Desert Quail Inn" width="135" height="90">
+        <p>Мотель</p>
+        <p>Звезды: 3</p>
+        <p>Рейтинг: 8,9</p>
+        <p>От 3000 Р.</p>
+        <a href="#">Подробнее</a>
+        <a href="#">Забронировать</a>
+      </article>
+      <article>
+        <h2>Villas at Poco Diablo</h2>
+        <img src="img/villas.jpg" alt="Villas at Poco Diablo" width="135" height="90">
+        <p>Апартаменты</p>
+        <p>Звезды: 2</p>
+        <p>Рейтинг: 9,2</p>
+        <p>От 2000 Р.</p>
+        <a href="#">Подробнее</a>
+        <a href="#">Забронировать</a>
+      </article>
+    </section>
   </main>
   <footer>
     <section>
-      <h2>Контакты</h2>
+      <h2 class="visually-hidden">Контакты</h2>
       <p>
         #visitSEDONA<br>
         ТЕЛ: <a href="tel:+74956660166">7(495) 666-01-66</a>
       </p>
     </section>
     <section>
-      <h2>Контакты в соцсетях</h2>
+      <h2 class="visually-hidden">Контакты в соцсетях</h2>
       <ul>
         <li>
           <a href="#">Твиттер</a>
@@ -136,7 +150,7 @@
       </ul>
     </section>
     <section>
-      <h2>Разработчик</h2>
+      <h2 class="visually-hidden">Разработчик</h2>
       <p>
         <span>Website by</span>
         <span>

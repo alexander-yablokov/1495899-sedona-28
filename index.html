@@ -13,6 +13,17 @@
       background-size: cover;
       background-repeat: no-repeat;
     }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
    </style>
 </head>
 
@@ -29,7 +40,7 @@
     <span><a><img src="img/sedona-logo.svg" alt="Логотип Седоны" width="138" height="70"></a></span>
   </header>
   <main>
-    <h1>Путешествие в Аризону. Городок Седона.</h1>
+    <h1 class="visually-hidden">Путешествие в Аризону. Городок Седона.</h1>
     <div class="welcome">
       <img src="img/welcome.png" 
            width="457" 
@@ -37,7 +48,7 @@
            alt="Добро пожаловать в прекрасную Седону! Потому что Гранд Каньон это полный отстой!">
     </div>
     <section>
-      <h2>Преимущества Седоны</h2>
+      <h2 class="visually-hidden">Преимущества Седоны</h2>
       <p>Седона — небольшой городок в Аризоне,<br>заслуживающий большего!</p>
       <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
       <dl>
@@ -134,14 +145,14 @@
   </main>
   <footer>
     <section>
-      <h2>Контакты</h2>
+      <h2 class="visually-hidden">Контакты</h2>
       <p>
         #visitSEDONA<br>
         ТЕЛ: <a href="tel:+74956660166">7(495) 666-01-66</a>
       </p>
     </section>
     <section>
-      <h2>Контакты в соцсетях</h2>
+      <h2 class="visually-hidden">Контакты в соцсетях</h2>
       <ul>
         <li>
           <a href="#">Твиттер</a>
@@ -155,7 +166,7 @@
       </ul>
     </section>
     <section>
-      <h2>Разработчик</h2>
+      <h2 class="visually-hidden">Разработчик</h2>
       <p>
         <span>Website by</span>
         <span>
