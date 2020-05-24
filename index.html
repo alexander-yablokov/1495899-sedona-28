@@ -112,17 +112,19 @@
       </dl>
     </section>
     <section>
-      <div>
         <h2>Поиск гостиницы в Седоне</h2>
-        <p>Дата заезда</p>
-        <p>Дата выезда</p>
-        <p>Взрослые</p>
-        <p>Дети</p>
-        <p>Найти</p>
-      </div>
-      <div>
-        <p>Заинтересовались?</p>
-        <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+        <div>
+          <p>Заинтересовались?</p>
+          <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+        </div>
+        <div>
+          <form name="hotel-search" method="get" action="https://echo.htmlacademy.ru/"> 
+            <label for="field-enter-date">Дата заезда:</label><input type="text" name="enter-date"  id="field-enter-date" placeholder="24 апреля 2017">
+            <label for="field-exit-date">Дата выезда:</label><input type="text" name="exit-date"  id="field-exit-date" placeholder="4 июля 2017">
+            <label for="field-adults-number">Взрослые:</label><input type="text" name="adults-number"  id="field-adults-number" placeholder="2">
+            <label for="field-children-number">Дети:</label><input type="text" name="children-number"  id="field-children-number" placeholder="0">
+            <button type="submit">Найти</button>
+        </form>
       </div>
     </section>
     <section>

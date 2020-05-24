@@ -14,7 +14,7 @@
       background-repeat: no-repeat;
       color: white;
     }
-   </style>
+  </style>
 </head>
 
 <body>
@@ -31,12 +31,40 @@
   </header>
   <main>
     <h1>Городок Седона. Предложения гостиниц, мотелей, апартаменов</h1>
-    <div class="form-filter">
-      Здесь будут располагаться элементы формы
-    </div>
     <section>
       <h2>Фильтр поиска</h2>
-      <div>Форма</div>
+      <div class="form-filter">
+        <form name="accomodation-search" method="get" action="https://echo.htmlacademy.ru/"
+        oninput="max_cost.value = cost_per_day.value">
+        <fieldset>
+          <label>Инфраструктура:</label>
+          <input type="checkbox" id="field-has-pool" name="has-pool" checked>
+          <label for="field-has-pool">Бассейн</label>
+          <input type="checkbox" id="field-has-parking" name="has-parking">
+          <label for="field-has-parking">Парковка</label>
+          <input type="checkbox" id="field-has-wifi" name="has-wifi">
+          <label for="field-has-wifi">Wi-fi</label>
+        </fieldset>
+        <fieldset>
+          <label>Тип жилья:</label>
+          <input type="checkbox" id="field-category-hotel" name="category-hotel" checked>
+          <label for="field-category-hotel">Гостиница</label>
+          <input type="checkbox" id="field-category-motel" name="category-motel" checked>
+          <label for="field-category-motel">Мотель</label>
+          <input type="checkbox" id="field-category-apartment" name="category-apartment" checked>
+          <label for="field-category-apartment">Апартаменты</label>
+        </fieldset>
+        <fieldset>
+          <label>Стоимость в сутки</label>
+          <div>
+            <span>от <output name="min_cost">0</output></span>
+            <span>до <output name="max_cost">3000</output></span>
+          </div>
+          <input type="range" id="field_cost_per_day" name="cost_per_day" min="0" max="3500" value="3000" step="10">
+          <button type="submit">Показать</button>
+        </fieldset>
+        </form>
+      </div>
       <div>
         <span>Найдено: 3</span>
         <span>Сортировка:</span>
@@ -62,7 +90,7 @@
       <p>Рейтинг: 8,5</p>
       <p>От 4000 Р.</p>
       <a href="#">Подробнее</a>
-      <a  href="#">Забронировать</a>
+      <a href="#">Забронировать</a>
     </article>
     <article>
       <h2>Desert Quail Inn</h2>
@@ -71,8 +99,8 @@
       <p>Звезды: 3</p>
       <p>Рейтинг: 8,9</p>
       <p>От 3000 Р.</p>
-      <a  href="#">Подробнее</a>
-      <a  href="#">Забронировать</a>
+      <a href="#">Подробнее</a>
+      <a href="#">Забронировать</a>
     </article>
     <article>
       <h2>Villas at Poco Diablo</h2>
@@ -81,8 +109,8 @@
       <p>Звезды: 2</p>
       <p>Рейтинг: 9,2</p>
       <p>От 2000 Р.</p>
-      <a  href="#">Подробнее</a>
-      <a  href="#">Забронировать</a>
+      <a href="#">Подробнее</a>
+      <a href="#">Забронировать</a>
     </article>
   </main>
   <footer>
