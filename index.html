@@ -24,7 +24,7 @@
       clip: rect(0 0 0 0);
       overflow: hidden;
     }
-   </style>
+  </style>
 </head>
 
 <body>
@@ -42,10 +42,8 @@
   <main>
     <h1 class="visually-hidden">Путешествие в Аризону. Городок Седона.</h1>
     <div class="welcome">
-      <img src="img/welcome.png" 
-           width="457" 
-           height="351"
-           alt="Добро пожаловать в прекрасную Седону! Потому что Гранд Каньон это полный отстой!">
+      <img src="img/welcome.png" width="457" height="351"
+        alt="Добро пожаловать в прекрасную Седону! Потому что Гранд Каньон это полный отстой!">
     </div>
     <section>
       <h2 class="visually-hidden">Преимущества Седоны</h2>
@@ -60,10 +58,7 @@
           <p>Седона - не аттракцион для туристов, там течёт своя жизнь</p>
         </dd>
         <dd>
-          <img src="img/real-city.jpg" 
-               width="800" 
-               height="256"
-               alt="Уголок Седоны">
+          <img src="img/real-city.jpg" width="800" height="256" alt="Уголок Седоны">
         </dd>
         <dt>
           Там есть Мост дьявола
@@ -73,24 +68,23 @@
           <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
         </dd>
         <dd>
-          <img src="img/devil-bridge.jpg" 
-               width="800" 
-               height="256"
-               alt="Мост дьявола. По факту просто скала с дырой.">
-        </dd>        
+          <img src="img/devil-bridge.jpg" width="800" height="256" alt="Мост дьявола. По факту просто скала с дырой.">
+        </dd>
         <dt>
           Небольшая площадь
         </dt>
         <dd>
           <p>— №3 —</p>
           <p>все достопримечательности находятся очень близко</p>
-        </dd>        <dt>
+        </dd>
+        <dt>
           Красивая дорога
         </dt>
         <dd>
           <p>— №4 —</p>
           <p>ехать в седону из лас-вегаса совсем не скучно!</p>
-        </dd>        <dt>
+        </dd>
+        <dt>
           Мало туристов
         </dt>
         <dd>
@@ -123,18 +117,22 @@
       </dl>
     </section>
     <section>
-        <h2>Поиск гостиницы в Седоне</h2>
-        <div>
-          <p>Заинтересовались?</p>
-          <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Седоне</p>
-        </div>
-        <div>
-          <form name="hotel-search" method="get" action="https://echo.htmlacademy.ru/"> 
-            <label for="field-enter-date">Дата заезда:</label><input type="text" name="enter-date"  id="field-enter-date" placeholder="24 апреля 2017">
-            <label for="field-exit-date">Дата выезда:</label><input type="text" name="exit-date"  id="field-exit-date" placeholder="4 июля 2017">
-            <label for="field-adults-number">Взрослые:</label><input type="text" name="adults-number"  id="field-adults-number" placeholder="2">
-            <label for="field-children-number">Дети:</label><input type="text" name="children-number"  id="field-children-number" placeholder="0">
-            <button type="submit">Найти</button>
+      <h2>Поиск гостиницы в Седоне</h2>
+      <div style="order: -1";>
+        <p>Заинтересовались?</p>
+        <p>Укажите предполагаемые даты поездки,<br>и мы покажем вам лучшие предложения гостиниц в Седоне</p>
+      </div>
+      <div>
+        <form name="hotel_search" method="get" action="https://echo.htmlacademy.ru/">
+          <label for="field_enter_date">Дата заезда:</label><input type="text" name="enter_date" id="field_enter_date"
+            placeholder="24 апреля 2017">
+          <label for="field_exit_date">Дата выезда:</label><input type="text" name="exit_date" id="field_exit_date"
+            placeholder="4 июля 2017">
+          <label for="field_adults_number">Взрослые:</label><input type="text" name="adults_number"
+            id="field_adults_number" placeholder="2">
+          <label for="field_children_number">Дети:</label><input type="text" name="children_number"
+            id="field_children_number" placeholder="0">
+          <button type="submit">Найти</button>
         </form>
       </div>
     </section>
