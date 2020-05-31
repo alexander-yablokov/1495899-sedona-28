@@ -1,0 +1,462 @@
+/* Свойства отсортированы по алфавиту */
+
+:root {
+    --basic-black: black;
+    --basic-blue: #669EC0;
+    --basic-brown: #604E43;
+    --basic-gray: #ABABAB;
+    --basic-dark-blue: #5496BD;
+    --basic-dark-brown: #503E33;
+    --basic-dark-gray: #333333;
+    --basic-gray: #666666;
+    --basic-light-blue: #81B3D2;
+    --basic-light-brown: #766357;
+    --basic-light-gray: #f2f2f2;
+    --basic-red: #FF0000;
+    --basic-white: white;
+
+    --footer-logo-black: #231F20;
+    --footer-logo-gray: #BDBBBC;
+    --input-gray: #F2F2F2;
+    --input-dark-gray: #EBEBEB;
+    --menu-gray: rgba(0, 0, 0, 0.2);
+
+    --search-gray: rgba(0, 0, 0, 0.3);
+}
+
+/* Общие настройки */
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--basic-light-gray);
+    color: var(--basic-black);
+    font-family:"PT Sans","Arial",sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 21px;
+    min-width: 1200px;
+    padding:0 10px;
+    text-transform:uppercase;
+} 
+
+a {
+    color: var(--basic-black);
+    text-decoration: none;
+}
+  
+img {
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+ul {
+    list-style:none;
+}
+
+/* Строка навигации вверху экрана */
+
+.logo {
+    box-sizing: content-box;
+    left: calc(50% - 138px / 2);
+    position: absolute;
+    top: 0;
+    width: 138px;
+  }
+
+.main-wrapper {
+    background-clip: content-box;
+    background-color: var(--basic-white);
+    box-shadow: 0 5px 15px 0 rgba(0, 1, 1, .2);
+    margin: auto;
+    width: 1200px;
+}
+
+.main-navigation {
+    background-color: transparent;
+    font-weight: bold;
+    line-height: 26px;
+}
+
+.main-navigation ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 5px 30px;
+}
+
+.main-navigation a:not([href]) {
+    color: var(--basic-light-brown);
+}
+
+.main-navigation a:hover {
+    color: var(--basic-light-blue);
+}
+
+.main-navigation a:active {
+    color: var(--menu-gray);
+}
+
+/* Большое изображение на главной странице */
+
+.welcome {
+    background: url("../img/intro-mask.svg") no-repeat 0 452px,
+                url("../img/index-background.jpg") no-repeat left top / cover;
+    background-color: #5496BD;
+    display: flex;
+    height: 509px;
+}
+
+.welcome img {
+    margin: auto;
+}
+
+/* Вступление */
+
+.motto {
+    font-size: 21px;
+    font-weight: bold;
+    height: 80px;
+    line-height: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 42px;
+    text-align: center;
+    width: 470px;
+}
+
+.intro {
+    font-size: 14px;
+    font-weight: normal;
+    height: 26px;
+    line-height: 26px;
+    margin: 17px auto 51px;
+    width: 519px;
+}
+
+/* 5 причин, по которым Седона круче, чем Гранд Каньон */
+
+.advantages-list {
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.advantage-item {
+    color: var(--basic-black);
+    display: flex; 
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 256px;    
+    margin: 0;
+    padding: 0;
+    width: 400px; 
+}
+
+.advantage-item.illustrated {
+    background-color: var(--basic-light-blue);
+    color: var(--basic-white);
+    width: 1200px;
+}
+
+.advantage-item dt, 
+.advantage-item dd {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 400px;
+}
+
+.advantage-item .picture {
+    width: 800px;
+}
+
+.advantage-item:nth-child(2) .picture {
+    order: -1;
+}
+
+.advantage-item .advantage-title {
+    font-size: 21px;
+    font-weight: bold;
+    height: 43px;
+    line-height: 21px;
+    margin: 0 auto;
+    margin-top: 47px;
+    text-align: center;
+    width: 160px;
+}
+
+.advantage-item .advantage-number {
+    font-size: 14px;
+    font-weight: normal;
+    height: 21px;
+    line-height: 21px;
+    margin: 0 auto;
+    margin-top: 25px;
+    text-align: center;
+    width: 51px;
+    white-space: nowrap;
+}
+
+.advantage-item .advantage-details {
+    font-size: 14px;
+    font-weight: normal;
+    height: 43px;
+    line-height: 21px;
+    margin: 0 auto;
+    margin-top: 47px;
+    text-align: center;
+    width: 305px;
+}
+
+/* Советы гостям Седоны*/
+
+.tips-list {
+    display: flex;
+}
+
+.tip {
+    background-repeat: no-repeat;
+    background-size: 75px 72px;
+    background-position: 50% 60px;
+    height: 330px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 400px;
+}
+
+.tip dt {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 0;
+    margin-top: 160px;
+}
+
+.tip dd {
+    color: var(--basic-dark-gray);
+    font-size: 14px;
+    font-weight: normal;
+    padding-bottom: 82px;
+    padding-top: 25px;
+}
+
+.accomodation {
+    background-image: url(../img/accomodation.svg);
+}
+
+.meal {
+    background-image: url(../img/meal.svg);
+}
+
+.souvenirs {
+    background-image: url(../img/souvenirs.svg);
+}
+
+/* Заинтересовались? */
+
+.interest {
+    margin-top: 51px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 139px;
+}
+
+.interest h3 {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 24px;    
+}
+
+.interest p {
+    color: var(--basic-dark-gray);  
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 24px; 
+}
+
+/* Форма расширенного поиска */
+
+.form-filter {
+    background-color: #5496BD;
+    background-image: url("../img/hotels-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.filter-checkboxes {
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-slider-set {
+    border: none;
+    flex-grow: 1;
+    text-align: right;
+}
+
+/* Три результата поиска*/
+
+.results {
+    display: flex;
+    flex-direction: column;
+    margin-left: 73px;
+}
+
+.result-item {
+    display: flex;
+    height: 90px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.result-photo {
+    order: -1;
+}
+
+.result-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    width: 400px;   
+    padding-left: 30px;
+}
+
+.result-description .title {
+    color:var(--basic-black);
+    font-size:21px;
+    line-height:26px;
+    margin: 0;
+    padding: 0;
+}
+
+.result-description .row-1 p,
+.result-description .row2 p{
+    margin: 0;
+    padding: 0;
+}
+
+.result-description .price, 
+.result-description .category,
+.result-description .details,
+.result-description .booking {
+    color: var(--basic-dark-gray);
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 21px;
+    padding-right: 7px;
+    width: 110px;
+}
+
+.result-description .button
+ {
+    color:#fff;
+    font-weight: bold;    
+    padding:3px 16px;
+    text-align:center
+}
+
+.result-description .details {
+    background-color:#81b3d2;
+}
+
+.result-description .booking {
+    background-color:#604e43;
+    width: 142px;
+}
+
+.result-level {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+/* Футер внизу сраницы*/
+
+.main-footer {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contacts p {
+    color: var(--basic-black);
+    font-size:21px;
+    line-height:26px; 
+    padding-left: 117px;
+    padding-top: 23px;
+}
+
+.hashtag {
+    font-weight: bold;
+}
+
+.social-icons {
+    display:flex;
+    justify-content: center;
+}
+
+.social-icons a {
+   display: inline-block;
+   background-color: var(--basic-light-blue);
+   background-repeat: no-repeat;
+   background-position: center;
+   color: transparent;
+   height: 48px;
+   margin-left: 8px;
+   width: 46px;
+}
+
+.social-icons a:hover {
+    background-color: var(--basic-blue);
+}
+
+.social-icons a:active {
+   background-color: var(--basic-dark-blue);
+}
+
+.social-icons .twitter {
+    background-image: url("../img/twitter.svg");
+}
+
+.social-icons .facebook {
+    background-image: url("../img/facebook.svg");
+}
+
+.social-icons .youtube {
+    background-image: url("../img/youtube.svg");
+}
+
+.logo-academy {
+    display: inline-block;
+    color: transparent;
+    background-image: url("../img/logo-htmlacademy.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 115px;
+    height: 41px;
+}
+
+/*  Прячем семантические заголовки*/
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
