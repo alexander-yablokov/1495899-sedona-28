@@ -30,53 +30,71 @@
         <form class="form-filter" name="form_filter" method="get" action="https://echo.htmlacademy.ru/">
           <fieldset class="filter-checkboxes">
             <label>Инфраструктура:</label>
-            <input type="checkbox" id="field_has_pool" name="has_pool" checked>
-            <label for="field_has_pool">Бассейн</label>
-            <input type="checkbox" id="field_has_parking" name="has_parking">
-            <label for="field_has_parking">Парковка</label>
-            <input type="checkbox" id="field_has_wifi" name="has_wifi">
-            <label for="field_has_wifi">Wi-fi</label>
+            <label>
+              <input type="checkbox" id="field_has_pool" name="has_pool" checked>  
+              <span>Бассейн</span>              
+            </label>
+            <label>
+              <input type="checkbox" id="field_has_parking" name="has_parking">
+              <span>Парковка</span>
+            </label>
+            <label>
+              <input type="checkbox" id="field_has_wifi" name="has_wifi">
+              <span>Wi-fi</span>
+            </label>
           </fieldset>
           <fieldset class="filter-checkboxes">
             <label>Тип жилья:</label>
-            <input type="checkbox" id="field_category_hotel" name="category_hotel" checked>
-            <label for="field_category_hotel">Гостиница</label>
-            <input type="checkbox" id="field_category_motel" name="category_motel" checked>
-            <label for="field_category_motel">Мотель</label>
-            <input type="checkbox" id="field_category_apartment" name="category_apartment" checked>
-            <label for="field_category_apartment">Апартаменты</label>
+            <label>
+              <input type="checkbox" id="field_category_hotel" name="category_hotel" checked>
+              <span>Гостиница</span>
+            </label>
+            <label>
+              <input type="checkbox" id="field_category_motel" name="category_motel" checked>
+              <span>Мотель</span>
+            </label>
+            <label>
+              <input type="checkbox" id="field_category_apartment" name="category_apartment" checked>
+              <span>Апартаменты</span>
+            </label>
           </fieldset>
-          <fieldset class="filter-slider-set">
-            <label>Стоимость в сутки</label>
-            <div>
-              <label>от</label>
-              <input type="text" id="field_min_cost" name="min_cost" value="0">
-              <label>до</label>
-              <input type="text" id="field_max_cost" name="max_cost" value="3000">
+
+
+          <div class="filter-slider-set">
+            <h3>Стоимость в сутки (Р):</h3>
+            <div class="slider-inputs"> 
+              <span class="low-limit" contenteditable="true">0</span>
+              <span class="top-limit" contenteditable="true">3000</span>
+            </div>  
+            <div class="slider">
+              <div class="range"></div>
+              <div class="min-range handle" id="min-range-field"></div>
+              <div class="max-range handle" id="max-range-field"></div>
             </div>
-            <div class="range">
-              <div class="bar"></div>
-              <button class="left-button" type="button"></button>
-              <button class="right-button" type="button"></button>
-            </div>
-            <button type="submit">Показать</button>
-          </fieldset>
+            <button class="submit-form" type="submit">ПОКАЗАТЬ</button>
+          </div>
+
+
+
         </form>
         <div class="sorting">
-          <span>Найдено: 3</span>
-          <span>Сортировка:</span>
-          <ul>
+          <span class="result-quantity">Найдено: 3</span>
+          <span class="sorting-by">Сортировка:</span>
+          <ul class="sorting-by-list">
             <li>
-              <a class="price-sorting" href="#">По цене</a>
+              <a class="sorting-by-item">По цене</a>
             </li>
             <li>
-              <a class="category-sorting" href="#">По типу</a>
+              <a class="sorting-by-item" href="#">По типу</a>
             </li>
             <li>
-              <a class="rating-sorting" href="#">По рейтингу</a>
+              <a class="sorting-by-item" href="#">По рейтингу</a>
             </li>
           </ul>
-          <a href="#"><img src="img/sort-direction" alt="Направление сортировки"></a>
+          <div class="sorting-order">
+            <a class="sort-direction-up" href="#"><img src="img/icon-up-dir.svg" alt="Сортировка по возрастанию"></a>
+            <a class="sort-direction-down" href="#"><img src="img/icon-down-dir.svg" alt="Сортировка по убыванию"></a>
+          </div>
         </div>
       </section>
       <section class="results">
@@ -176,6 +194,93 @@
       </section>
     </footer>
   </div>
+<script>
+  class Slider {
+    constructor (min=0, max=4000) {
+      this.min = min;
+      this.max = max;
+    }
+
+    mouseDownHandler = (e) => { 
+      e.preventDefault();
+      document.addEventListener("mouseup", this.mouseUpHandler);
+      document.addEventListener("mousemove", this.mouseMoveHandler);
+    }
+
+    mouseUpHandler = (e) => {
+      e.preventDefault();
+      document.removeEventListener("mousemove", this.mouseMoveHandler);
+      document.removeEventListener("mouseup", this.mouseUpHandler);
+    }
+
+    mouseMoveHandler = (e) => {
+      e.preventDefault();
+
+      const leftPosition = this.handle1.style.left;
+      const minValue = parseInt(leftPosition); 
+      const rightPosition = parseInt(this.handle2.style.left);
+      const maxValue = parseInt(rightPosition); 
+
+      let newPosition = parseInt(e.target.style.left) + e.movementX;
+      if (e.target === this.handle1) {
+        if (newPosition < 0) {
+          newPosition=0;
+        } else 
+        if (newPosition > maxValue-20) {
+          newPosition = rightPosition - 20;
+        }
+      }
+      if (e.target === this.handle2) {
+        if (newPosition > 317-10) {
+          newPosition=317-10;
+        } else 
+        if (newPosition < minValue+20) {
+          newPosition = leftPosition + 20;
+        }
+      }
+      e.target.style.left = `${newPosition}px`;
+
+      this.range.style.left=minValue+'px';
+      const rangeWidth = maxValue - minValue;
+      this.range.style.width = `${rangeWidth}px`;
+
+      this.lowLimit.textContent = Math.floor(minValue * this.unitPerPixel);
+      this.topLimit.textContent = Math.ceil(maxValue * this.unitPerPixel);
+    }
+
+    init = () => {
+      this.slider = document.querySelector(".slider");
+      this.sliderWidth = 317;
+      this.unitPerPixel = Math.ceil((this.max - this.min) / this.sliderWidth);
+
+      this.range = document.querySelector(".range");
+
+      this.lowLimit = document.querySelector(".low-limit");
+      this.topLimit = document.querySelector(".top-limit");
+
+      this.lowLimit.textContent = 0;
+      this.topLimit.textContent = this.max * 0.75;
+
+      this.handle1 = document.querySelector(".min-range");
+      this.handle2 = document.querySelector(".max-range");
+      this.handle1.style.left="0px";
+      const topPosition =  this.sliderWidth * 0.75 ;
+      this.handle2.style.left = `${topPosition}px`;
+      
+      this.range.style.left="0px";
+      this.range.style.width = `${topPosition}px`;
+
+      
+     this.handle1.addEventListener("mousedown", this.mouseDownHandler);
+     this.handle2.addEventListener("mousedown", this.mouseDownHandler);
+    }
+
+  }
+  
+    const slider = new Slider();
+    slider.init();
+  
+</script>
 </body>
 
 </html>
